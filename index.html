@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datum</title>
+    <script>
+        function szamolas(){
+            var kezdo = document.getElementById("kezdo").value;
+            var napok = document.getElementById("napok").value;
+            if( napok!="" && napok>=0){
+                var datum =new Date(kezdo);//yyy-mm-dd formájú stringből dátumot állít elő
+                var eredmeny=new Date();
+                window.alert(datum.getFullYear()+"-"+datum.getMonth()+"-"+datum.getDate());
+                datum.setDate(datum.getDate()+napok);
+                document.getElementById("eredmeny").value=datum;
+              //  window.alert(kezdodatum);
+
+            }else{
+                document.getElementById("napok").value="";
+                document.getElementById("napok").focus();
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input id="kezdo" type="text" disabled value="1867-01-01"/>
+        +
+        <input id="napok" type="text"/>
+        <input type="button" value="=" onclick="szamolas();"/>
+        <input id="eredmeny" type="text" disabled/>
+
+    </form>
+    
+</body>
+</html>
