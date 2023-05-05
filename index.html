@@ -7,6 +7,7 @@
     <title>Datum</title>
     <script>
         function szamolas(){
+            document.getElementById
             var kezdo = document.getElementById("kezdo").value;
             var napok = document.getElementById("napok").value;
             if( napok!="" && napok>=0){
@@ -23,13 +24,24 @@
             }
 
         }
+        function ellenorzo1(){
+            //window.alaert("lenyomo billentyűzet")
+            for(elem in event){
+                document.writeln(elem);
+            }
+        }
+        function ellenorzo2(){
+            for(elem in event){
+                document.writeln(elem);
+            }
+        }
     </script>
 </head>
 <body>
     <form>
         <input id="kezdo" type="text" disabled value="1867-01-01"/>
         +
-        <input id="napok" type="text"/>
+        <input id="napok" type="text" size="5" maxlength="5" onkeypress="ellenorzo1();"--> /> 
         <input type="button" value="=" onclick="szamolas();"/>
         <input id="eredmeny" type="text" disabled/>
 
